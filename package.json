@@ -1,0 +1,25 @@
+{
+  "name": "socket.io-mongo-chat",
+  "version": "1.0.0",
+  "description": "NodeJS, Socket.io, MongoDB, Chat server",
+  "main": "server.js",
+  "dependencies": {
+    "mongodb": "^3.0.2",
+    "socket.io": "^2.0.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dambergn/node-socket.io-mongo-chat.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dambergn/node-socket.io-mongo-chat/issues"
+  },
+  "homepage": "https://github.com/dambergn/node-socket.io-mongo-chat#readme"
+}
