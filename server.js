@@ -1,10 +1,10 @@
 // "use strict";
 
 const mongo = require('mongodb').MongoClient;
-const client = require('socket.io').listen(4000).sockets;
+const client1 = require('socket.io').listen(4000).sockets;
 
 // Connect to mongo db
-mongo.connect('mongodb://127.0.0.1/mongochat', function (err, db) {
+mongo.connect('mongodb://localhost:27017/mongochat', function (err, client) {
     if (err) {
         console.log('Connection to MongoDB failed...');
         throw err;
@@ -13,8 +13,8 @@ mongo.connect('mongodb://127.0.0.1/mongochat', function (err, db) {
     console.log('MongoDB connected...');
 
     // Connect to Socket.io
-    client.on('connection', function (socket) {
-        let chat = db.collection('chats');
+    client1.on('connection', function (socket) {
+        let chat = client.db.collection('chats');
 
         // Create function to send status.
         sendStatus = function (s) {
@@ -44,7 +44,7 @@ mongo.connect('mongodb://127.0.0.1/mongochat', function (err, db) {
             } else {
                 // Instert message
                 chat.insert({ name: name, message: message }, function () {
-                    client.emit('output', [data]);
+                    client1.emit('output', [data]);
 
                     //Send status object
                     sendStatus({

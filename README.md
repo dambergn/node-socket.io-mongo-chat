@@ -18,3 +18,10 @@ sudo apt-get update
 
 #Part 1 - building the server
 https://www.youtube.com/watch?v=8Y6mWhcdSUM
+
+#Part 2 - build the front end
+
+bootstrap cdn
+https://v4-alpha.getbootstrap.com/getting-started/introduction/
+socketio cdn
+https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js
